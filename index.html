@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Jeu ballon</title>
+    <link rel="stylesheet" href="style.css" />
+	<script src="animation.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>Jeu du ballon rebondissant</h1>
+ <fieldset>
+    <legend>Tracer le terrain :</legend>
+    <table>
+    <tr><td>Largeur terrain:</td><td> <input type="text" id="w" value="800"><span>*</span></td></tr>
+    <tr><td>hauteur terrain:</td><td> <input type="text" id="h" value="290"><span>*</span></td></tr>
+    <tr><td>Couleur terrain:</td><td> <input type="radio" name="c" value="green" checked="checked">Vert <input type="radio" name="c" value="red">Rouge<input type="radio" name="c" value="black">Noire<span>*</span></td></tr>
+    </table>
+  </fieldset>
+  
+  <fieldset>
+    <legend>Dessiner le ballon  :</legend>
+    <table>
+    <tr><td>Diamêtre Ballon:</td><td> <input type="text" id="d" value="50"><span>*</span></td></tr>
+    <tr><td>Couleur de remplissage :</td>
+	<td> 
+		<input type="radio" name="cr" value="gold" checked="checked">Dorée 
+		<input type="radio" name="cr" value="silver">Argenté
+		<input type="radio" name="cr" value="bronze">Bronze</td></tr>
+    <tr><td>Couleur du contour:</td>
+	<td> 
+		<input type="radio" name="cc" value="white" checked="checked">Blanc 
+		<input type="radio" name="cc" value="blue">Bleu
+		<input type="radio" name="cc" value="orange">Orange</td></tr>
+    </table>
+  </fieldset>
+  
+  <fieldset>
+    <legend>Animer le ballon :</legend>
+    <table>
+    <tr><td>Position depart X</td><td> <input type="number" id="pox" value="60"><span>*</span></td></tr>
+    <tr><td>Position depart Y</td><td> <input type="number" id="poy" value="60"><span>*</span></td></tr>
+    <tr><td>Vitesse de mouvement :</td>
+	<td><select id="v">
+			<option value="1">Lent
+			<option value="3">Moyenne
+			<option value="5" selected>Rapide
+		</select><span>*</span></td></tr>
+    </table>
+  </fieldset>
+  <p>
+  <button onclick="dessinerTerrain()">Dessiner le terrain</button>
+  <button onclick="dessinerBallon()">Dessiner le ballon</button>
+  <button onclick="start()">Démarrer l'animation</button>
+  <button onclick="pause()">Suspendre l'animation</button>
+  <button onclick="stop()">Arrêter l'animation</button>
+  </p>
+  <canvas id="canvas"/>
+</body>
+</html>
